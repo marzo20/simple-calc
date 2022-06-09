@@ -14,7 +14,7 @@ class Calculator extends Component {
         console.log(updatedInput)
         this.setState(updatedInput)
     }
-    addNumbers = e => {
+    calculateNumbers = e => {
         e.preventDefault()
         this.setState({
             result: eval(`${parseInt(this.state.num1)}${this.state.operation}${parseInt(this.state.num2)}`),
@@ -34,7 +34,7 @@ class Calculator extends Component {
             <h1>Calculate with React!</h1>
       
             <div className="add">
-                <form onSubmit={this.addNumbers}>
+                <form onSubmit={this.calculateNumbers}>
                     <input type="text" name="num1" onChange={this.handleNumberChange} value={this.state.num1}/>
                     <select onChange={this.changeOperation}>
                         <option>choose operation</option>
